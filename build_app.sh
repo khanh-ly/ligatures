@@ -17,7 +17,7 @@ done
 lipo -create -output "$APP/Contents/MacOS/Ligatures" build/tmp/Ligatures-arm64 build/tmp/Ligatures-x86_64
 
 echo "Making icon…"
-swift macos/make_icon.swift build/tmp/icon.png
+swift macos/make_icon.swift macos/icon-source.png build/tmp/icon.png
 ICONSET=build/tmp/AppIcon.iconset
 mkdir -p "$ICONSET"
 for s in 16 32 128 256 512; do

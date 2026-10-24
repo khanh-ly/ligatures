@@ -119,7 +119,7 @@ make_screenshots.sh      regenerates the README screenshots in docs/
 macos/main.swift         native app window
 macos/FontServer.swift   the app's built-in server (Swift port of fontmanager.py)
 macos/Info.plist         app bundle settings
-macos/make_icon.swift    draws the app icon (a monoline "fi" ligature)
+macos/make_icon.swift    builds the app icon from macos/icon-source.png
 macos/make_screenshot.swift  renders a screenshot mockup (used by make_screenshots.sh)
 docs/                    README screenshots (light and dark) and the social preview image
 ```
