@@ -11,7 +11,7 @@
 
 ## Download
 
-**[Download Ligatures for Mac](https://github.com/khanh-ly/ligatures/releases/latest/download/Ligatures.zip)** (macOS 12 or later, Apple silicon or Intel), or see all [releases](https://github.com/khanh-ly/ligatures/releases).
+**[Download Ligatures for Mac](https://github.com/khanh-ly/ligatures/releases/latest/download/ligatures.zip)** (macOS 12 or later, Apple silicon or Intel), or see all [releases](https://github.com/khanh-ly/ligatures/releases).
 
 Unzip it and drag **Ligatures** into your Applications folder. The app isn't notarized by Apple, so the first time you open it, macOS asks you to approve it in System Settings; see [On another Mac](#on-another-mac) for the steps.
 
@@ -49,7 +49,7 @@ Run `./build_app.sh` without `--install` to only build it into `build/`.
 
 ### On another Mac
 
-Each build also makes `build/Ligatures.zip`. Copy the zip to the other Mac (AirDrop, a USB drive, a file share), double-click it, and drag **Ligatures** into Applications.
+Each build also makes `build/ligatures.zip`. Copy the zip to the other Mac (AirDrop, a USB drive, a file share), double-click it, and drag **Ligatures** into Applications.
 
 Because the app isn't notarized by Apple, macOS blocks it the first time:
 

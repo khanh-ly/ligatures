@@ -34,10 +34,10 @@ echo "Signing (ad hoc)…"
 codesign --force --deep --sign - "$APP"
 
 # A zip that keeps the bundle intact, for copying the app to another Mac.
-ditto -c -k --sequesterRsrc --keepParent "$APP" "build/Ligatures.zip"
+ditto -c -k --sequesterRsrc --keepParent "$APP" "build/ligatures.zip"
 
 echo "Built $APP"
-echo "Built build/Ligatures.zip (for other Macs)"
+echo "Built build/ligatures.zip (for other Macs)"
 if [[ "${1:-}" == "--install" ]]; then
   # Quit a running copy first (found by bundle ID, so this also catches older builds)
   osascript -e 'if application id "ly.khanh.fontmanager" is running then tell application id "ly.khanh.fontmanager" to quit' || true

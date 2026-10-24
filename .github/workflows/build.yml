@@ -1,4 +1,4 @@
-# Builds Ligatures.zip on macOS for every push to main, every pull request, and on demand.
+# Builds ligatures.zip on macOS for every push to main, every pull request, and on demand.
 # Pushing a version tag (e.g. v1.1.0) also attaches the zip to that version's GitHub release.
 name: Build
 
@@ -25,14 +25,14 @@ jobs:
         run: |
           codesign --verify --deep --strict build/Ligatures.app
           lipo -archs build/Ligatures.app/Contents/MacOS/Ligatures | grep -q "x86_64 arm64"
-          cd build && shasum -a 256 Ligatures.zip | tee Ligatures.zip.sha256
+          cd build && shasum -a 256 ligatures.zip | tee ligatures.zip.sha256
 
       - uses: actions/upload-artifact@v4
         with:
-          name: Ligatures
+          name: ligatures
           path: |
-            build/Ligatures.zip
-            build/Ligatures.zip.sha256
+            build/ligatures.zip
+            build/ligatures.zip.sha256
           if-no-files-found: error
 
   release:
@@ -44,7 +44,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: Ligatures
+          name: ligatures
 
       - name: Attach the zip to the release
         env:
@@ -54,4 +54,4 @@ jobs:
         run: |
           gh release view "$TAG" >/dev/null 2>&1 \
             || gh release create "$TAG" --title "Ligatures ${TAG#v}" --generate-notes
-          gh release upload "$TAG" Ligatures.zip Ligatures.zip.sha256 --clobber
+          gh release upload "$TAG" ligatures.zip ligatures.zip.sha256 --clobber
