@@ -11,7 +11,7 @@
 
 ## Download
 
-**[Download Ligatures for Mac](https://github.com/khanh-ly/Ligatures/releases/latest/download/Ligatures.zip)** (macOS 12 or later, Apple silicon or Intel), or see all [releases](https://github.com/khanh-ly/Ligatures/releases).
+**[Download Ligatures for Mac](https://github.com/khanh-ly/ligatures/releases/latest/download/Ligatures.zip)** (macOS 12 or later, Apple silicon or Intel), or see all [releases](https://github.com/khanh-ly/ligatures/releases).
 
 Unzip it and drag **Ligatures** into your Applications folder. The app isn't notarized by Apple, so the first time you open it, macOS asks you to approve it in System Settings; see [On another Mac](#on-another-mac) for the steps.
 

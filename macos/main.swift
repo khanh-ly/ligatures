@@ -170,7 +170,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
 
     // MARK: - About
 
-    static let projectURL = URL(string: "https://github.com/khanh-ly/Ligatures")!
+    static let projectURL = URL(string: "https://github.com/khanh-ly/ligatures")!
 
     var aboutWindow: NSWindow?
 
