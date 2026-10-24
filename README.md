@@ -18,7 +18,7 @@ It runs entirely on your machine, either as a self-contained Mac app or as a sma
 
 ## Download
 
-**[Download Ligatures 1.1.0 for Mac](https://github.com/khanh-ly/ligatures/releases/latest/download/ligatures.zip)** (macOS 12 or later, Apple silicon or Intel), or see all [releases](https://github.com/khanh-ly/ligatures/releases).
+**[Download Ligatures 1.1.0 for Mac](https://github.com/khanh-ly/ligatures/releases/latest/download/ligatures.zip)** (macOS 12 or later, Apple silicon or Intel), or see all [releases](https://github.com/khanh-ly/ligatures/releases). Website: [khanh-ly.github.io/ligatures](https://khanh-ly.github.io/ligatures/).
 
 Unzip it and drag **Ligatures** into your Applications folder. The app isn't notarized by Apple, so the first time you open it, macOS asks you to approve it in System Settings; see [On another Mac](#on-another-mac) for the steps.
 
@@ -124,6 +124,7 @@ fontmanager.py           terminal server: catalog, install/uninstall, favorites,
 index.html               the whole interface (HTML, CSS and JavaScript in one file)
 build_app.sh             builds the app and a zip for other Macs (--install copies it to /Applications)
 make_screenshots.sh      regenerates the README screenshots in docs/
+site/                    the website, published to GitHub Pages by .github/workflows/pages.yml
 macos/main.swift         native app window
 macos/FontServer.swift   the app's built-in server (Swift port of fontmanager.py)
 macos/Info.plist         app bundle settings

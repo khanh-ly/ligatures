@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ligatures: free font manager for Mac — install Google Fonts and Fontshare fonts</title>
+<meta name="description" content="Ligatures is a free, open-source font manager for macOS. Browse, preview and install every free font on Google Fonts and Fontshare with one click. No account, no subscription.">
+<link rel="canonical" href="https://khanh-ly.github.io/ligatures/">
+<meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F7F6F3" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- link previews -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ligatures">
+<meta property="og:title" content="Ligatures: free font manager for Mac">
+<meta property="og:description" content="Browse, preview and install every free font on Google Fonts and Fontshare with one click.">
+<meta property="og:url" content="https://khanh-ly.github.io/ligatures/">
+<meta property="og:image" content="https://khanh-ly.github.io/ligatures/social-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta property="og:image:alt" content="The Ligatures app icon next to the words: Ligatures, free font manager for Mac">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- tells search engines this is a free macOS app -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Ligatures",
+  "description": "A free, open-source font manager for macOS. Browse, preview and install fonts from Google Fonts and Fontshare.",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "macOS 12 or later",
+  "softwareVersion": "1.1.0",
+  "url": "https://khanh-ly.github.io/ligatures/",
+  "downloadUrl": "https://github.com/khanh-ly/ligatures/releases/latest/download/ligatures.zip",
+  "image": "https://khanh-ly.github.io/ligatures/icon-512.png",
+  "screenshot": "https://khanh-ly.github.io/ligatures/screenshot-light.png",
+  "license": "https://opensource.org/licenses/MIT",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "Khanh Ly" }
+}
+</script>
+
+<style>
+:root {
+  --bg: #F7F6F3; --panel: #FFFFFF; --ink: #1C1B19; --muted: #66635D; --line: #E4E1DB;
+  --brand: #FF4C41; --brand-strong: #C8281E; --on-brand: #FFFFFF; --link: #C8281E;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #141414; --panel: #1D1D1C; --ink: #ECEBE8; --muted: #9A978F; --line: #2F2E2B; --link: #FF6B61; }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+a { color: var(--link); text-underline-offset: 3px; }
+a:focus-visible, .button:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+.rule { border-top: 1px solid var(--line); }
+
+/* top bar: cells divided by 1px lines, like the app */
+.top { display: flex; align-items: stretch; border-bottom: 1px solid var(--line); }
+.top > * { display: flex; align-items: center; padding: 0 24px; min-height: 60px; border-right: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+.top > :first-child { padding-left: 32px; font-weight: 700; gap: 10px; }
+.top > :first-child img { width: 28px; height: 28px; }
+.top .spacer { flex: 1; padding: 0; }
+.top > :last-child { border-right: 0; padding-right: 32px; }
+.top a:not(:first-child):hover { background: color-mix(in srgb, var(--line) 45%, transparent); }
+
+/* hero */
+.hero { text-align: center; padding: 88px 0 56px; }
+.hero img.icon { width: 140px; height: 140px; }
+h1 { margin: 18px 0 0; font-size: clamp(40px, 7vw, 68px); line-height: 1.05; letter-spacing: -.025em; }
+.tagline { margin: 14px auto 0; max-width: 620px; font-size: clamp(18px, 2.4vw, 21px); color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 34px; }
+.button { display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; border-radius: 0; font-weight: 600; text-decoration: none; }
+.button.primary { background: var(--brand-strong); color: var(--on-brand); }
+.button.primary:hover { background: color-mix(in srgb, var(--brand-strong) 88%, #000); }
+.button.secondary { border: 1px solid var(--line); color: var(--ink); }
+.button.secondary:hover { background: color-mix(in srgb, var(--line) 45%, transparent); }
+.small { margin-top: 14px; font-size: 14px; color: var(--muted); }
+
+.shot { margin: 8px auto 0; max-width: 1080px; }
+.shot img { display: block; width: 100%; height: auto; }
+
+/* sections */
+section { padding: 72px 0; overflow-x: hidden; overflow-x: clip; }  /* hide the grids' 1px overhang */
+.pad { padding-left: 32px; padding-right: 32px; }
+h2 { margin: 0 0 28px; font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+/* features: an edge-to-edge grid of cells divided by 1px lines */
+.cells { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line);
+  margin-right: -1px; clip-path: inset(0 1px 0 0); }
+.cell { padding: 28px 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.cell h3 { margin: 0 0 8px; font-size: 17px; }
+.cell p { margin: 0; color: var(--muted); font-size: 15px; }
+.cell .num { display: block; margin-bottom: 14px; font-size: 13px; font-weight: 600; color: var(--brand); font-variant-numeric: tabular-nums; }
+
+ol.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line); margin-right: -1px; clip-path: inset(0 1px 0 0); }
+ol.steps li { counter-increment: step; padding: 28px 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+ol.steps li::before { content: counter(step, decimal-leading-zero); display: block; margin-bottom: 14px; font-size: 13px; font-weight: 600; color: var(--brand); }
+ol.steps strong { display: block; margin-bottom: 6px; }
+ol.steps span { color: var(--muted); font-size: 15px; }
+
+.faq details { border-bottom: 1px solid var(--line); }
+.faq details:first-of-type { border-top: 1px solid var(--line); }
+.faq summary { cursor: pointer; padding: 20px 32px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--muted); font-weight: 400; font-size: 20px; line-height: 1; }
+.faq details[open] summary::after { content: "−"; }
+.faq summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.faq details p { margin: 0; padding: 0 32px 22px; color: var(--muted); max-width: 824px; }
+
+footer { border-top: 1px solid var(--line); padding: 32px 32px 48px; font-size: 14px; color: var(--muted); }
+footer p { margin: 4px 0; }
+
+@media (max-width: 900px) { .cells { grid-template-columns: repeat(2, 1fr); } ol.steps { grid-template-columns: 1fr; } }
+@media (max-width: 640px) {
+  .wrap, .pad, footer { padding-left: 20px; padding-right: 20px; }
+  .cells { grid-template-columns: 1fr; }
+  .faq summary { padding: 18px 20px; }
+  .faq details p { padding: 0 20px 20px; }
+  .top > * { padding: 0 16px; }
+  .top > :first-child { padding-left: 20px; }
+  .top > :last-child { padding-right: 20px; }
+  .top .hide-sm { display: none; }
+  .hero { padding: 56px 0 40px; }
+  .cell, ol.steps li { padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Site">
+  <a href="#top"><img src="favicon.png" alt="" width="28" height="28">Ligatures</a>
+  <span class="spacer"></span>
+  <a class="hide-sm" href="#features">Features</a>
+  <a class="hide-sm" href="#install">Install</a>
+  <a class="hide-sm" href="#faq">FAQ</a>
+  <a href="https://github.com/khanh-ly/ligatures">GitHub</a>
+</nav>
+
+<main id="top">
+  <div class="wrap hero">
+    <img class="icon" src="icon-512.png" alt="Ligatures app icon" width="140" height="140">
+    <h1>Ligatures</h1>
+    <p class="tagline">The free font manager for Mac. Browse, preview and install every free font on Google Fonts and Fontshare with one click.</p>
+    <div class="actions">
+      <a class="button primary" href="https://github.com/khanh-ly/ligatures/releases/latest/download/ligatures.zip">Download Ligatures 1.1.0</a>
+      <a class="button secondary" href="https://github.com/khanh-ly/ligatures">View on GitHub</a>
+    </div>
+    <p class="small">Free and open source · macOS 12 or later · Apple silicon and Intel</p>
+  </div>
+
+  <div class="wrap">
+    <picture class="shot">
+      <source media="(prefers-color-scheme: dark)" srcset="screenshot-dark.png">
+      <img src="screenshot-light.png" width="1392" height="940"
+           alt="The Ligatures window showing a grid of font families, each previewing the sentence 'Sphinx of black quartz, judge my vow'">
+    </picture>
+  </div>
+
+  <section id="features">
+    <h2 class="pad">Features</h2>
+    <div class="cells">
+      <div class="cell"><span class="num">01</span><h3>Two free libraries</h3><p>About 2,000 font families from Google Fonts and Fontshare in one place, each shown once.</p></div>
+      <div class="cell"><span class="num">02</span><h3>Live previews</h3><p>Type your own text, set the size, and compare fonts side by side in a grid or a list.</p></div>
+      <div class="cell"><span class="num">03</span><h3>Find fonts fast</h3><p>Search by family or designer, filter by library, category and language, and sort by popularity or what's new.</p></div>
+      <div class="cell"><span class="num">04</span><h3>One-click install</h3><p>Fonts go straight into your Fonts folder and appear in every app. Uninstalling moves them to the Trash.</p></div>
+      <div class="cell"><span class="num">05</span><h3>Every style, every detail</h3><p>See all weights and italics, variable axes, the license and ready-to-paste web embed code.</p></div>
+      <div class="cell"><span class="num">06</span><h3>New font alerts</h3><p>Each time you open Ligatures it checks both libraries and highlights families added since last time.</p></div>
+    </div>
+  </section>
+
+  <section id="install">
+    <h2 class="pad">Install</h2>
+    <ol class="steps">
+      <li><strong>Download and unzip</strong><span>Get <a href="https://github.com/khanh-ly/ligatures/releases/latest/download/ligatures.zip">ligatures.zip</a> and double-click it.</span></li>
+      <li><strong>Move to Applications</strong><span>Drag Ligatures into your Applications folder. Upgrading keeps your installed fonts and favorites.</span></li>
+      <li><strong>Approve it once</strong><span>The app isn't notarized by Apple. On first launch, click Done, then open System Settings → Privacy &amp; Security and click Open Anyway.</span></li>
+    </ol>
+  </section>
+
+  <section id="faq" class="faq">
+      <h2 class="pad">FAQ</h2>
+      <details><summary>Is Ligatures really free?</summary>
+        <p>Yes. Ligatures is free and open source under the MIT License, and every font it offers is free to download. There's no account, subscription or tracking.</p></details>
+      <details><summary>Which fonts can I install?</summary>
+        <p>Every family on Google Fonts and the free families on Fontshare, about 2,000 in total. Families both libraries offer appear once, from Google Fonts.</p></details>
+      <details><summary>Can I use the fonts commercially?</summary>
+        <p>Google Fonts families are open source, mostly under the SIL Open Font License. Fontshare families use the SIL Open Font License or the ITF Free Font License, which allows personal and commercial use. Each family's license is shown in its details panel.</p></details>
+      <details><summary>Where are fonts installed, and how do I remove them?</summary>
+        <p>In your user Fonts folder (~/Library/Fonts), so every app can use them right away. Uninstall from the font's details panel; the files go to the Trash. Ligatures only ever removes fonts it installed.</p></details>
+      <details><summary>Why does macOS warn me the first time I open it?</summary>
+        <p>Ligatures isn't signed with a paid Apple Developer ID, so macOS can't verify it automatically. Approve it once in System Settings → Privacy &amp; Security → Open Anyway. The source code is public on GitHub if you'd like to check or build it yourself.</p></details>
+      <details><summary>Which Macs does it run on?</summary>
+        <p>Any Mac with macOS 12 Monterey or later, on Apple silicon or Intel. Nothing else needs to be installed.</p></details>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <p>Ligatures is open source under the <a href="https://github.com/khanh-ly/ligatures/blob/main/LICENSE">MIT License</a>. © 2026 Khanh Ly.</p>
+    <p>Not affiliated with or endorsed by Google or Indian Type Foundry. "Google Fonts" is a trademark of Google LLC; Fontshare is a service of Indian Type Foundry. Fonts keep their own licenses.</p>
+  </div>
+</footer>
+
+</body>
+</html>
