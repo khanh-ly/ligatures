@@ -18,9 +18,17 @@ It runs entirely on your machine, either as a self-contained Mac app or as a sma
 
 ## Download
 
-**[Download Ligatures for Mac](https://github.com/khanh-ly/ligatures/releases/latest/download/ligatures.zip)** (macOS 12 or later, Apple silicon or Intel), or see all [releases](https://github.com/khanh-ly/ligatures/releases).
+**[Download Ligatures 1.1.0 for Mac](https://github.com/khanh-ly/ligatures/releases/latest/download/ligatures.zip)** (macOS 12 or later, Apple silicon or Intel), or see all [releases](https://github.com/khanh-ly/ligatures/releases).
 
 Unzip it and drag **Ligatures** into your Applications folder. The app isn't notarized by Apple, so the first time you open it, macOS asks you to approve it in System Settings; see [On another Mac](#on-another-mac) for the steps.
+
+### What's new in 1.1.0
+
+- A new red app icon.
+- Each release is now built and checked by GitHub Actions, with a SHA-256 checksum file next to the download.
+- The repository and the download now use lowercase names (`khanh-ly/ligatures`, `ligatures.zip`). Old links keep working.
+
+See the [1.1.0 release notes](https://github.com/khanh-ly/ligatures/releases/tag/v1.1.0) for details. Upgrading from 1.0? Replace the app in Applications; your installed fonts and favorites are kept.
 
 ## Features
 
