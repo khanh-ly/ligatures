@@ -1,6 +1,13 @@
-# Ligatures
+# Ligatures: free font manager for Mac
 
-*The free fonts manager.* A small local app for browsing every free family on [Google Fonts](https://fonts.google.com) and [Fontshare](https://www.fontshare.com), and installing them on your Mac with one click. It runs entirely on your machine, either as a self-contained Mac app or as a small Python server (standard library only) that you open in your browser.
+[![Latest release](https://img.shields.io/github/v/release/khanh-ly/ligatures?label=download)](https://github.com/khanh-ly/ligatures/releases/latest)
+[![Build](https://github.com/khanh-ly/ligatures/actions/workflows/build.yml/badge.svg)](https://github.com/khanh-ly/ligatures/actions/workflows/build.yml)
+![macOS 12+](https://img.shields.io/badge/macOS-12%2B-lightgrey)
+[![MIT License](https://img.shields.io/github/license/khanh-ly/ligatures)](LICENSE)
+
+**Ligatures is a free, open-source font manager for macOS.** Browse, search and preview every free font family on [Google Fonts](https://fonts.google.com) and [Fontshare](https://www.fontshare.com), then install fonts on your Mac with one click: no account and no subscription.
+
+It runs entirely on your machine, either as a self-contained Mac app or as a small Python server (standard library only) that you open in your browser.
 
 > Not affiliated with or endorsed by Google or Indian Type Foundry. "Google Fonts" is a trademark of Google LLC; Fontshare is a service of Indian Type Foundry.
 
@@ -114,7 +121,7 @@ macos/FontServer.swift   the app's built-in server (Swift port of fontmanager.py
 macos/Info.plist         app bundle settings
 macos/make_icon.swift    draws the app icon (a monoline "fi" ligature)
 macos/make_screenshot.swift  renders a screenshot mockup (used by make_screenshots.sh)
-docs/                    README screenshots (light and dark)
+docs/                    README screenshots (light and dark) and the social preview image
 ```
 
 ## Licenses
